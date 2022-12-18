@@ -20,38 +20,72 @@ vim.g.kommentary_create_default_mappings = false
 -- ------------------------------
 
 require('packer').startup(function(use) 
+
+	-- Plugin manager
 	use 'wbthomason/packer.nvim'
+
+	-- Colorscheme creation aid for Neovim (required by onehalf)
 	use 'rktjmp/lush.nvim'
+
+	-- Light color theme
 	use 'szsdk/onehalf.nvim'
+
+	-- A blazing fast and easy to configure Neovim statusline
 	use {
 		'nvim-lualine/lualine.nvim',
 		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
 	}
+
+	-- A file explorer tree for Neovim
 	use {
 		'nvim-tree/nvim-tree.lua',
 		requires = { 'nvim-tree/nvim-web-devicons' }
 	}
+
+	-- Neovim plugin to comment text in and out
 	use 'b3nj5m1n/kommentary'
+
+	-- A highly extendable fuzzy finder over lists
 	use {
 		'nvim-telescope/telescope.nvim',
 		tag = '0.1.0',
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
+
+	-- Super fast git decorations
 	use 'lewis6991/gitsigns.nvim'
+
+	-- Provides some git-related functions
 	use 'emmanueltouzery/agitator.nvim'
+
+	-- A neovim plugin to persist and toggle multiple terminals
 	use 'akinsho/toggleterm.nvim'
+
+	-- EditorConfig plugin for Neovim
 	use 'gpanders/editorconfig.nvim'
+
+	-- A super powerful autopair plugin for Neovim that supports multiple characters
 	use 'windwp/nvim-autopairs'
+
+	-- Clipboard manager neovim plugin with telescope integration
 	use {
 		'AckslD/nvim-neoclip.lua',
 		requires = { 'nvim-telescope/telescope.nvim' }
 	}
+
+	-- Changes current working directory to project's root directory
 	use 'ygm2/rooter.nvim'
+
+	-- Deleting a buffer will no longer close any window unexpectedly 
 	use 'ojroques/nvim-bufdel'
+
+	-- A fast Neovim http client
 	use {
 		'NTBBloodbath/rest.nvim',
 		requires = { 'nvim-lua/plenary.nvim' }
 	}
+
+	-- Treesitter configurations and abstraction layer for Neovim
 	use {
         'nvim-treesitter/nvim-treesitter',
         run = function()
