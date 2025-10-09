@@ -6,6 +6,7 @@ vim.opt.scrolloff = 3
 vim.opt.sidescrolloff = 3
 vim.opt.cursorline = true
 vim.opt.number = true
+vim.opt.list = true
 
 -- Default indentation is 4 spaces
 vim.opt.tabstop = 4
