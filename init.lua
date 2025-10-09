@@ -31,6 +31,10 @@ vim.keymap.set('n', '<leader>X', ':bufdo bd<CR>')
 vim.keymap.set('n', '<leader>/', 'gcc', { remap = true })
 vim.keymap.set('v', '<leader>/', 'gc', { remap = true })
 
+-- Navigation between next and previous buffers (breadcrumb)
+vim.keymap.set('n', '<Left>', ':bp<CR>')
+vim.keymap.set('n', '<Right>', ':bn<CR>')
+
 -- Window actions
 vim.keymap.set('n', '<leader>ww', '<C-w>w')
 vim.keymap.set('n', '<leader>wc', '<C-w>c')
