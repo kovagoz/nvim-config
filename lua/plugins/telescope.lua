@@ -31,7 +31,7 @@ return {
           ignore_current_buffer = true,
           layout_config = {
             height = 0.50,
-            width = 0.50,
+            width = 0.70,
           }
         },
         git_status = {
