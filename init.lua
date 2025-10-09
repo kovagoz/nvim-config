@@ -31,6 +31,10 @@ vim.keymap.set('n', '<leader>X', ':bufdo bd<CR>')
 vim.keymap.set('n', '<leader>/', 'gcc', { remap = true })
 vim.keymap.set('v', '<leader>/', 'gc', { remap = true })
 
+-- Window actions
+vim.keymap.set('n', '<leader>ww', '<C-w>w')
+vim.keymap.set('n', '<leader>wc', '<C-w>c')
+
 -- File search in the whole project or in the selected folder in nvim-tree
 vim.keymap.set("n", "<leader>ff", function()
   local tb = require("telescope.builtin")
