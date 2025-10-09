@@ -26,6 +26,10 @@ vim.keymap.set('n', '<leader>x', ':bd<CR>')
 -- Close all buffers
 vim.keymap.set('n', '<leader>X', ':bufdo bd<CR>')
 
+-- Comments
+vim.keymap.set('n', '<leader>/', 'gcc', { remap = true })
+vim.keymap.set('v', '<leader>/', 'gc', { remap = true })
+
 -- File search in the whole project or in the selected folder in nvim-tree
 vim.keymap.set("n", "<leader>ff", function()
   local tb = require("telescope.builtin")
