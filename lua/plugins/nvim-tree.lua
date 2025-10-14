@@ -19,7 +19,30 @@ return {
     },
     filters = {
       dotfiles = false,
+      git_ignored = false,
     },
+    on_attach = function(bufnr)
+      local api = require('nvim-tree.api')
+      
+      -- Default mappings
+      api.config.mappings.default_on_attach(bufnr)
+      
+      -- Custom mapping for ENTER: open file and close nvim-tree
+      vim.keymap.set('n', '<CR>', function()
+        local node = api.tree.get_node_under_cursor()
+        if node and node.type == 'file' then
+          api.node.open.edit()
+          api.tree.close()
+        else
+          api.node.open.edit()
+        end
+      end, { buffer = bufnr, noremap = true, silent = true, desc = 'Open and close tree' })
+      
+      -- The 'o' key will use default behavior (opens but doesn't close tree)
+      vim.keymap.set('n', 'o', function()
+        api.node.open.edit()
+      end, { buffer = bufnr, noremap = true, silent = true, desc = 'Open' })
+    end,
   },
   keys = {
     { "<leader>e", "<cmd>NvimTreeToggle<CR>", desc = "Toggle NvimTree" },
