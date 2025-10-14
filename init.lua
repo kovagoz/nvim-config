@@ -55,6 +55,10 @@ vim.keymap.set('n', '<Right>', ':bn<CR>')
 vim.keymap.set('n', '<leader>ww', '<C-w>w')
 vim.keymap.set('n', '<leader>wc', '<C-w>c')
 
+-- Scrolling
+vim.keymap.set('n', '<Down>', '<C-e>')
+vim.keymap.set('n', '<Up>', '<C-y>')
+
 -- File search in the whole project or in the selected folder in nvim-tree
 vim.keymap.set("n", "<leader>ff", function()
   local tb = require("telescope.builtin")
