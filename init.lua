@@ -7,6 +7,7 @@ vim.opt.sidescrolloff = 3
 vim.opt.cursorline = true
 vim.opt.number = true
 vim.opt.list = true
+vim.opt.cc = "80"
 
 -- Default indentation is 4 spaces
 vim.opt.tabstop = 4
@@ -15,6 +16,8 @@ vim.opt.expandtab = true
 vim.bo.softtabstop = 4
 
 require("config.lazy")
+
+vim.api.nvim_set_hl(0, "NonText", { fg="#51576d" })
 
 vim.keymap.set('n', '<space>', ':nohlsearch<Bar>:echo<CR>', { silent = true })
 
