@@ -15,6 +15,19 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.bo.softtabstop = 4
 
+-- Set proper file type for .env files
+vim.filetype.add({
+  extension = {
+    env = "sh",
+  },
+  filename = {
+    [".env"] = "sh",
+  },
+  pattern = {
+    ["%.env%.[%w_.-]+"] = "sh",
+  },
+})
+
 require("config.lazy")
 
 vim.api.nvim_set_hl(0, "NonText", { fg="#51576d" })
