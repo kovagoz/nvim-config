@@ -49,7 +49,7 @@ return {
   end,
   keys = {
 --    { "<Leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
-    { "<Leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Live Grep" },
+--    { "<Leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Live Grep" },
     { "<Leader>fo", "<cmd>Telescope oldfiles<cr>", desc = "Previously open files" },
     { "<Tab>", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
     { "<Leader>gf", "<cmd>Telescope git_status<cr>", desc = "Git Status" },

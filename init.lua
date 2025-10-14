@@ -65,7 +65,7 @@ vim.keymap.set("n", "<leader>ff", function()
   local ft = vim.bo.filetype
 
   if ft == "NvimTree" then
-    -- -- get folder under cursor in nvim-tree
+    -- Get folder under cursor in nvim-tree
     local api = require("nvim-tree.api")
     local node = api.tree.get_node_under_cursor()
 
@@ -83,7 +83,36 @@ vim.keymap.set("n", "<leader>ff", function()
       vim.notify("No node under cursor", vim.log.levels.WARN)
     end
   else
-    -- default: search whole project
+    -- Default: search whole project
     tb.find_files()
+  end
+end)
+
+-- File grep in the whole project or in the selected folder in nvim-tree
+vim.keymap.set("n", "<leader>fg", function()
+  local tb = require("telescope.builtin")
+  local ft = vim.bo.filetype
+
+  if ft == "NvimTree" then
+    -- Get folder under cursor in nvim-tree
+    local api = require("nvim-tree.api")
+    local node = api.tree.get_node_under_cursor()
+
+    if node then
+      if node.type == "directory" then
+        path = node.absolute_path
+      else
+        path = vim.fn.fnamemodify(node.absolute_path, ":h")
+      end
+    end
+
+    if path then
+      tb.live_grep({ cwd = path })
+    else
+      vim.notify("No node under cursor", vim.log.levels.WARN)
+    end
+  else
+    -- Default: search whole project
+    tb.live_grep()
   end
 end)
