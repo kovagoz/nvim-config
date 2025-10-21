@@ -59,6 +59,9 @@ vim.keymap.set('n', '<leader>wc', '<C-w>c')
 vim.keymap.set('n', '<Down>', '<C-e>')
 vim.keymap.set('n', '<Up>', '<C-y>')
 
+-- Select pasted test
+vim.keymap.set('n', '<leader>v', '`[v`]')
+
 -- File search in the whole project or in the selected folder in nvim-tree
 vim.keymap.set("n", "<leader>ff", function()
   local tb = require("telescope.builtin")
