@@ -7,5 +7,12 @@ return {
   },
   keys = {
     { "<leader>gs", "<cmd>Neogit<CR>", desc = "Open Neogit" },
+    { "<leader>gP", function ()
+        require('neogit').action('push', 'to_pushremote', {})()
+      end, desc = "Git push"
+    },
+    { "<leader>gp", function ()
+        require('neogit').action('pull', 'from_pushremote', {})()
+      end, desc = "Git pull" },
   }
 }
