@@ -30,6 +30,7 @@ return {
       -- Custom mapping for ENTER: open file and close nvim-tree
       vim.keymap.set('n', '<CR>', function()
         local node = api.tree.get_node_under_cursor()
+
         if node and node.type == 'file' then
           api.node.open.edit()
           api.tree.close()
@@ -40,6 +41,12 @@ return {
       
       -- The 'o' key will use default behavior (opens but doesn't close tree)
       vim.keymap.set('n', 'o', function()
+        local node = api.tree.get_node_under_cursor()
+
+        if node and node.type == 'directory' then
+          vim.cmd('normal! zz')
+        end
+
         api.node.open.edit()
       end, { buffer = bufnr, noremap = true, silent = true, desc = 'Open' })
     end,
