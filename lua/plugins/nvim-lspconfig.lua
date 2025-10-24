@@ -7,7 +7,7 @@ return {
     if not configs.dockerfile_language_server then
       configs.dockerfile_language_server = {
         default_config = {
-          cmd = { vim.fn.expand('~/.local/share/nvim/mason/bin/docker-langserver'), '--stdio' },
+          cmd = { 'docker-langserver', '--stdio' },
           filetypes = { 'dockerfile' },
           root_dir = lspconfig.util.root_pattern('.git'),
           single_file_support = true,
