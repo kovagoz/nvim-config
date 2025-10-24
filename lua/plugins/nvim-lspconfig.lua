@@ -19,5 +19,6 @@ return {
 
     vim.lsp.enable("helm_ls")
     vim.lsp.enable("intelephense")
+    vim.lsp.enable("terraformls")
   end
 }
