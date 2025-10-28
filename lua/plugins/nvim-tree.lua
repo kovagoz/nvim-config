@@ -5,7 +5,7 @@ return {
   opts = {
     sort_by = "case_sensitive",
     view = {
-      width = 45,
+      adaptive_size = true,
     },
     renderer = {
       group_empty = true,
