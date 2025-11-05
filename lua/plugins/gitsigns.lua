@@ -6,5 +6,6 @@ return {
     { "[h", "<cmd>Gitsigns prev_hunk<CR>", desc = "Previous hunk" },
     { "<leader>gb", "<cmd>Gitsigns blame<CR>", desc = "Git blame" },
     { "<leader>gr", "<cmd>Gitsigns reset_hunk<CR>", desc = "Reset hunk" },
+    { "<leader>gd", "<cmd>Gitsigns preview_hunk<CR>", desc = "Git diff hunk" },
   }
 }
