@@ -30,6 +30,8 @@ vim.filetype.add({
 
 require("config.lazy")
 
+vim.cmd[[colorscheme tokyonight-storm]]
+
 vim.api.nvim_set_hl(0, "NonText", { fg="#51576d" })
 
 vim.keymap.set('n', '<space>', ':nohlsearch<Bar>:echo<CR>', { silent = true })
