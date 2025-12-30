@@ -1,3 +1,19 @@
+function vim.getVisualSelection()
+  vim.cmd('noau normal! "vy"')
+  local text = vim.fn.getreg('v')
+  vim.fn.setreg('v', {})
+
+  text = string.gsub(text, "\n", "")
+
+  if #text > 0 then
+    return text
+  else
+    return ''
+  end
+end
+
+local tb = require('telescope.builtin')
+
 return {
   "nvim-telescope/telescope.nvim",
   tag = "0.1.8",
@@ -67,5 +83,14 @@ return {
     { "<Tab>", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
     { "<Leader>gf", "<cmd>Telescope git_status<cr>", desc = "Git Status" },
     { "<Leader>lf", "<cmd>Telescope lsp_document_symbols<cr>", desc = "LSP Functions" },
+    {
+      "<leader>fg",
+      function()
+        local text = vim.getVisualSelection()
+        tb.live_grep({ default_text = text })
+      end,
+      mode = "v",
+      desc = "Grep visual selection",
+    },
   },
 }
