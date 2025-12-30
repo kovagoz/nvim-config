@@ -45,6 +45,18 @@ return {
             preview_cutoff = 15,
           }
         },
+        lsp_document_symbols = {
+          disable_devicons = true,
+          previewer = false,
+          ignore_current_buffer = true,
+          layout_config = {
+            height = 0.50,
+            width = 0.70,
+          },
+          symbols = { "Function", "Method" },
+          sorting_strategy = "ascending",
+          prompt_title = "LSP Functions",
+        }
       },
     })
   end,
@@ -54,5 +66,6 @@ return {
     { "<Leader>fo", "<cmd>Telescope oldfiles<cr>", desc = "Previously open files" },
     { "<Tab>", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
     { "<Leader>gf", "<cmd>Telescope git_status<cr>", desc = "Git Status" },
+    { "<Leader>lf", "<cmd>Telescope lsp_document_symbols<cr>", desc = "LSP Functions" },
   },
 }
