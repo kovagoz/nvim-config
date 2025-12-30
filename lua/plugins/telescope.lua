@@ -29,6 +29,7 @@ return {
           disable_devicons = true,
           previewer = false,
           ignore_current_buffer = true,
+          sort_lastused = true,
           layout_config = {
             height = 0.50,
             width = 0.70,
