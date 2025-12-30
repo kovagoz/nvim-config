@@ -4,6 +4,8 @@ return {
   lazy = false,
   opts = {
     sort_by = "case_sensitive",
+    sync_root_with_cwd = true,
+    respect_buf_cwd = true,
     view = {
       adaptive_size = true,
     },
